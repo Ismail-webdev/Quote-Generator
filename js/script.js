@@ -47,9 +47,26 @@ function tweetQuote() {
     const twitterUrl = `https://twitter.com/intent/tweet?text=${quote} - ${author}`;
     window.open(twitterUrl, '_blank');
 }
+
+async function getBackground() {
+    const accesskey = "vHPvmAftdUgg6IKFP55ZtDV0DWOCDibFJ6OYPTAXA6I";
+    const baseUrl = `https://api.unsplash.com/photos/random?client_id=${accesskey}`;
+    try {
+        const response = await fetch(baseUrl);
+        const data = await response.json();
+        //console.log(data);
+        if (response.ok) {
+            document.body.style.backgroundImage = `url(${data.urls.regular})`;
+        }
+    } catch (error) {
+        console.error('Error fetching image:', error.message);
+    }
+}
 // event listeners
-newQuoteButton.addEventListener('click', getQuote);
+newQuoteButton.addEventListener('click', getQuote, getBackground);
+newQuoteButton.addEventListener('click', getBackground);
 twitterButton.addEventListener('click', tweetQuote);
 
 //Load
 getQuote();
+getBackground();
