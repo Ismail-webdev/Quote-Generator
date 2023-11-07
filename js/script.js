@@ -63,7 +63,8 @@ async function getBackground() {
     }
 }
 // event listeners
-newQuoteButton.addEventListener('click', getQuote, getBackground);
+newQuoteButton.addEventListener('click', getQuote);
+newQuoteButton.addEventListener('click', getBackground);
 twitterButton.addEventListener('click', tweetQuote);
 
 //Load
