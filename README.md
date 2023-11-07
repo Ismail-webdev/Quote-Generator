@@ -1,7 +1,5 @@
 # Quote Generator
 
-![Quote Generator Demo](demo.gif)
-
 A simple and elegant web app that generates random quotes and allows you to share them on Twitter. The app fetches quotes from [Quotable API](https://api.quotable.io/random) and uses beautiful background images from Unsplash API.
 
 ## Live Demo
